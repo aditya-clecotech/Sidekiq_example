@@ -7,6 +7,6 @@ class User < ApplicationRecord
   after_create :send_welcome_email 
 
   def send_welcome_email
-    SendemailJob.set(wait: 5.seconds).perform_later(self)
+    SendemailJob.set(wait: 15.seconds).perform_later(self)
   end
 end
